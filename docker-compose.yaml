@@ -24,6 +24,17 @@ services:
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       ## uncomment next line to set an admin secret
       # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+    links:
+      - "sqlexpress"
+  sqlexpress:
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
+    container_name: "sqlexpress"
+    user: "0:0"
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Ludens123."
+      MSSQL_PID: "Express"
 volumes:
   db_data:
-
