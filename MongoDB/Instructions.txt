@@ -1,0 +1,3 @@
+docker-compose docker -f stack.yaml up
+
+Go to: http://localhost:8081
