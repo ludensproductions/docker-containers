@@ -1,3 +1,4 @@
-docker-compose docker -f stack.yaml up
+docker-compose -f docker.yaml up
 
-Go to: http://localhost:8081
+
+MongoDB_URL: mongodb://root:example@mongo:27017/
